@@ -53,6 +53,6 @@ COD_ciudad : string(3)
 Nombre-Ciudad :
 
 ## TODO:
-[] Conteo de empresas registradas por ciudad.
-[] Control de ingreso de datos.
-[] Normalizacion de nomenclaturas.
+[ ] Conteo de empresas registradas por ciudad.
+[ ] Control de ingreso de datos.
+[ ] Normalizacion de nomenclaturas.

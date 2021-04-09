@@ -19,6 +19,7 @@ namespace AyED_TP1
             string mail;
             long telefono;
             string cod_ciudad;
+            List<Empresa> Empresas = new();
 
             //B - MENU
             Console.WriteLine("MENU PRINCIPAL:\n\n1. Empresas\n2. Clientes");
@@ -61,7 +62,6 @@ namespace AyED_TP1
                     {
                         option = Console.ReadKey().KeyChar; //INGRESO DE DATO DEL MENU CON ESTRUCTURA DE CONTROL
                     } while (option != '1' && option != '2' && option != '3' && option != '4');
-                    List<Empresa> Empresas = new();
                 
                     switch (option)
 

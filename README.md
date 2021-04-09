@@ -1,5 +1,5 @@
 # AyED_TP1_Custom
-Version en C# con POO del TP1 de AyED UTN ISI
+Version en C# con POO del TP1 de AyED UTN ISI. Se supone que debe hacerse en python y utilizando estructuras basicas, quiero llevarlo mas haya y usarlo como ejemplo para serguir aprendiendo POO.
 
 ## Consigna
 

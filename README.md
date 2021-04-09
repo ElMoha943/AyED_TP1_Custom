@@ -34,7 +34,7 @@ MENU PRINCIPAL | MENU EMPRESAS DESARROLLADORAS
 ------------ | -------------
 1 EMPRESAS | 1 Alta de EMPRESAS
 2 CLIENTES | 2 .
-0 salir | 3 0
+0 salir | 3 .
 **** | 0 Volver al menu principal
  
 Los datos que corresponden ser cargados son los siguientes (determinar el tipo de datos que

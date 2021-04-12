@@ -20,6 +20,9 @@ namespace AyED_TP1
             long telefono;
             string cod_ciudad;
             List<Empresa> Empresas = new();
+            Ciudad Rosario = new("Rosario", "ROS") ;
+            Ciudad Cordoba = new("Cordoba", "CBA");
+            Ciudad BSAS = new("Buenos Aires", "BA");
 
             //B - MENU
             Console.WriteLine("MENU PRINCIPAL:\n\n1. Empresas\n2. Clientes");
@@ -53,10 +56,10 @@ namespace AyED_TP1
                     }
                 }
                 while(clave!=empress_key); //VALIDACION DE CLAVE
-                Console.Clear();
                 //MENU DE EMPRESA (CLAVE ACEPTADA)
                 do
                 {
+                    Console.Clear();
                     Console.WriteLine("MENU EMPRESAS DESARROLLADORAS :\n\n1. Alta de EMPRESAS \n2. .\n3. .\n0. Volver al menú principal");
                     do
                     {
@@ -69,6 +72,7 @@ namespace AyED_TP1
                         case '1': //ALTA DE EMPRESAS
                             do
                             {
+                                Console.Clear();
                                 Console.WriteLine("\nIngrese el codigo de la empresa");
                                 cod_emp = Console.ReadLine();
                                 Console.WriteLine("\nIngrese el nombre de la empresa");
@@ -91,10 +95,46 @@ namespace AyED_TP1
                             break;
 
                         case '2': //...
-                            foreach (Empresa aEmpresa in Empresas)
+                            Console.Clear();
+                            foreach (Empresa aEmpresa in Empresas) //CUENTA LA CANTIDAD DE EMPRESAS POR CIUDAD
                             {
-                                Console.WriteLine(aEmpresa.ToString());
+                                switch (aEmpresa.Cod_ciudad)
+                                {
+                                    case "ROS":
+                                        Rosario.CantEmpresas++;
+                                        break;
+
+                                    case "CBA":
+                                        Cordoba.CantEmpresas++;
+                                        break;
+
+                                    case "BA":
+                                        BSAS.CantEmpresas++;
+                                        break;
+                                }
                             }
+                            Console.Clear();
+                            if (Rosario.CantEmpresas > Cordoba.CantEmpresas) //SELECCIONA LA CIUDAD CON MAS EMPRESAS
+                            {
+                                if (Rosario.CantEmpresas > BSAS.CantEmpresas)
+                                {
+                                    Console.WriteLine(Rosario.Nombre + " es la ciudad con mas empresas");
+                                }
+                                else
+                                {
+                                    Console.WriteLine(BSAS.Nombre + " es la ciudad con mas empresas");
+                                }
+                            }
+                            else if (Cordoba.CantEmpresas > BSAS.CantEmpresas)
+                            {
+                                Console.WriteLine(Cordoba.Nombre+" es la ciudad con mas empresas");
+                            }
+                            else
+                            {
+                                Console.WriteLine(BSAS.Nombre + " es la ciudad con mas empresas");
+                            }
+                            Console.WriteLine("\nRosario: "+Rosario.CantEmpresas+"\nCordoba: "+Cordoba.CantEmpresas+"\nBuenos Aires: "+BSAS.CantEmpresas+"\n\nPulse cualquier tecla para continuar");
+                            Console.ReadLine();
                             break;
 
                         case '3': //...

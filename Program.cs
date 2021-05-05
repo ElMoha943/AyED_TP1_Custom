@@ -8,19 +8,16 @@ namespace AyED_TP1
         static void Main()
         {
             //VARIABLES
-            const string empress_key = "OWO"; //A - CLAVES
-            char option;
-            string clave="";
-            int attempts=3, repeat;
+            const string empress_key = "OWO"; //A - CLAVES CONSTANTE
+            string clave = ""; //Clave que ingresa el usuario
+            char option = 's';
+            int attempts = 3, repeat;
 
-            string cod_emp;
-            string nombre;
-            string direccion;
-            string mail;
+            string cod_emp, nombre, direccion, mail, cod_ciudad;
             long telefono;
-            string cod_ciudad;
+
             List<Empresa> Empresas = new();
-            Ciudad Rosario = new("Rosario", "ROS") ;
+            Ciudad Rosario = new("Rosario", "ROS");
             Ciudad Cordoba = new("Cordoba", "CBA");
             Ciudad BSAS = new("Buenos Aires", "BA");
 
@@ -44,7 +41,7 @@ namespace AyED_TP1
                     Console.Clear();
                     if (attempts > 0)
                     {
-                        Console.WriteLine("\nIngrese la clave, "+attempts+" intentos restantes.");
+                        Console.WriteLine("\nIngrese la clave, " + attempts + " intentos restantes.");
                         clave = Console.ReadLine(); //INGRESO DE DATOS
                         attempts--; //CONTADOR DE INTENTOS
                     }
@@ -55,7 +52,7 @@ namespace AyED_TP1
                         Environment.Exit(0); //CIERRA EL PROGRAMA TRAS TOCAR UNA TECLA
                     }
                 }
-                while(clave!=empress_key); //VALIDACION DE CLAVE
+                while (clave != empress_key); //VALIDACION DE CLAVE
                 //MENU DE EMPRESA (CLAVE ACEPTADA)
                 do
                 {
@@ -65,9 +62,7 @@ namespace AyED_TP1
                     {
                         option = Console.ReadKey().KeyChar; //INGRESO DE DATO DEL MENU CON ESTRUCTURA DE CONTROL
                     } while (option != '1' && option != '2' && option != '3' && option != '4');
-                
                     switch (option)
-
                     {
                         case '1': //ALTA DE EMPRESAS
                             do
@@ -91,7 +86,7 @@ namespace AyED_TP1
                                 {
                                     repeat = Console.ReadKey().KeyChar; //INGRESO DE DATO DEL MENU CON ESTRUCTURA DE CONTROL
                                 } while (repeat != '1' && repeat != '2');
-                            } while (repeat=='1'); //REPITE LA ENTRADA DE EMPRESAS
+                            } while (repeat == '1'); //REPITE LA ENTRADA DE EMPRESAS
                             break;
 
                         case '2': //...
@@ -114,26 +109,8 @@ namespace AyED_TP1
                                 }
                             }
                             Console.Clear();
-                            if (Rosario.CantEmpresas > Cordoba.CantEmpresas) //SELECCIONA LA CIUDAD CON MAS EMPRESAS
-                            {
-                                if (Rosario.CantEmpresas > BSAS.CantEmpresas)
-                                {
-                                    Console.WriteLine(Rosario.Nombre + " es la ciudad con mas empresas");
-                                }
-                                else
-                                {
-                                    Console.WriteLine(BSAS.Nombre + " es la ciudad con mas empresas");
-                                }
-                            }
-                            else if (Cordoba.CantEmpresas > BSAS.CantEmpresas)
-                            {
-                                Console.WriteLine(Cordoba.Nombre+" es la ciudad con mas empresas");
-                            }
-                            else
-                            {
-                                Console.WriteLine(BSAS.Nombre + " es la ciudad con mas empresas");
-                            }
-                            Console.WriteLine("\nRosario: "+Rosario.CantEmpresas+"\nCordoba: "+Cordoba.CantEmpresas+"\nBuenos Aires: "+BSAS.CantEmpresas+"\n\nPulse cualquier tecla para continuar");
+                            Console.WriteLine("\nRosario: " + Rosario.CantEmpresas + "\nCordoba: " + Cordoba.CantEmpresas + "\nBuenos Aires: " + BSAS.CantEmpresas + "\n\nPulse cualquier tecla para continuar");
+                            mayorCiudad(Cordoba.CantEmpresas, Rosario.CantEmpresas, BSAS.CantEmpresas);
                             Console.ReadLine();
                             break;
 
@@ -143,6 +120,37 @@ namespace AyED_TP1
 
                     }
                 } while (option != 0);
+                attempts = 3;
+                option = 's';
+            }
+        }
+
+        static void mayorCiudad(int CantCBA, int CantRos, int CantBA)
+        {
+            if (CantRos != CantCBA && CantRos != CantBA && CantCBA != CantBA)
+            { // todos distintos
+                if (CantRos > CantCBA && CantRos > CantBA) Console.WriteLine("Rosario es la ciudad con mas empresas");
+                else if (CantCBA > CantBA && CantCBA > CantRos) Console.WriteLine("Cordoba es la ciudad con mas empresas");
+                else Console.WriteLine("Buenos Aires es la ciudad con mas empresas");
+            }
+            else if (CantRos == CantCBA && CantRos == CantBA) Console.WriteLine("Las 3 ciudades tienen la misma cantidad de empresas");
+            else
+            {//2 iguales
+                if (CantRos == CantCBA)
+                {
+                    if (CantRos > CantBA) Console.WriteLine("Rosario y Cordoba tienen la mayor cantidad de empresas");
+                    else Console.WriteLine("Buenos Aires tiene la mayor cantidad de empresas");
+                }
+                else if (CantCBA == CantBA)
+                {
+                    if (CantRos > CantCBA) Console.WriteLine("Rosario es la ciudad con mas empresas");
+                    else Console.WriteLine("Cordoba y Buenos Aires tienen la mayor cantidad de empresas");
+                }
+                else
+                {
+                    if (CantCBA > CantBA) Console.WriteLine("Cordoba es la ciudad con mas empresas");
+                    else Console.WriteLine("Rosario y Buenos Aires tienen la mayor cantidad de empresas");
+                }
             }
         }
     }

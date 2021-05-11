@@ -54,5 +54,5 @@ Nombre-Ciudad :
 
 ## TODO:
 - [x] Conteo de empresas registradas por ciudad.
-- [ ] Control de ingreso de datos.
+- [x] Control de ingreso de datos.
 - [ ] Normalizacion de nomenclaturas.

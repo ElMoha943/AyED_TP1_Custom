@@ -10,31 +10,31 @@ namespace AyED_TP1
     {
         public void altaEmpresa()
         {
-            
+            Console.Clear();
         }
 
         public void altaCiudad()
         {
-            
+            Console.Clear();
         }
 
         public void altaProyecto()
         {
-
+            Console.Clear();
         }
 
         public void altaProducto()
         {
-
+            Console.Clear();
         }
 
         public void altaCliente()
         {
-
+            Console.Clear();
         }
         public void getProyectos()
         {
-
+            Console.Clear();
         }
     }
 }

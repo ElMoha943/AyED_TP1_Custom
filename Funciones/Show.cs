@@ -12,7 +12,6 @@ namespace AyED_TP1
         public void showEmpresa()
         {
             char opt;
-            
             do
             {
                 Console.Clear();

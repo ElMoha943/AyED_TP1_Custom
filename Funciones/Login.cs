@@ -13,6 +13,7 @@ namespace AyED_TP1
             uint attempts = 3;
             string clave, secret = "admin123";
             while (attempts > 0) {
+                Console.Clear();
                 Console.WriteLine("\nIngrese la clave, " + attempts + " intentos restantes.");
                 attempts--; //DISMINUYE EL CONTADOR DE INTENTOS
                 clave = Console.ReadLine(); //INGRESO DE DATOS
@@ -22,7 +23,8 @@ namespace AyED_TP1
                 }
                 else Console.WriteLine("Clave incorrecta.");
             }
-            Console.WriteLine("Se agotaron los intentos."); //MENSAJE DE ERROR DESPUES DE FALLAR 3 VECES
+            Console.WriteLine("Se agotaron los intentos. Pulse Cualquier tecla para continuar."); //MENSAJE DE ERROR DESPUES DE FALLAR 3 VECES
+            Console.ReadKey();
             return '0';
         }
     }

@@ -42,7 +42,7 @@ namespace AyED_TP1
                         s.showEmpresa();
                         break;
                 }
-            } while (option != 0);
+            } while (option != '0');
         }
     }
 }

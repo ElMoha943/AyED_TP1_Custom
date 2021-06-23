@@ -18,8 +18,8 @@ namespace AyED_TP1
                 attempts--; //DISMINUYE EL CONTADOR DE INTENTOS
                 clave = Console.ReadLine(); //INGRESO DE DATOS
                 if (clave == secret) {
-                    if (tipo == "cliente") return '1';
-                    if (tipo == "empresa") return '2';
+                    if (tipo == "cliente") return '2';
+                    if (tipo == "empresa") return '1';
                 }
                 else Console.WriteLine("Clave incorrecta.");
             }

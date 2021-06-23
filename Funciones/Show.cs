@@ -43,7 +43,7 @@ namespace AyED_TP1
 
         public void showCliente()
         {
-            char opt;
+            char opt, tipo;
             do
             {
                 Console.Clear();
@@ -59,7 +59,10 @@ namespace AyED_TP1
                         break;
 
                     case '2':
-                        a.getProyectos();
+                        Console.Clear();
+                        Console.WriteLine("Ingrese el tipo de proyecto que desae buscar.\nC. Casa\nD. Departamento\nO. Oficina\nL. Lotes");
+                        tipo = Convert.ToChar(Console.ReadLine());
+                        a.getProyectos(tipo);
                         break;
                 }
             } while (opt != '0'); //CONDICION DE SALIDA

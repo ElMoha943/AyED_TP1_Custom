@@ -8,7 +8,7 @@ namespace AyED_TP1
 {
     class Empresa
     {
-        public Empresa(string cOD_EMP, string nombre, string direccion, string mail, string telefono, string cOD_Ciudad)
+        public Empresa(string cOD_EMP, string nombre, string direccion, string mail, uint telefono, string cOD_Ciudad)
         {
             COD_EMP = cOD_EMP;
             Nombre = nombre;
@@ -23,7 +23,7 @@ namespace AyED_TP1
         public string Nombre { get; set; }
         public string Direccion { get; set; }
         public string Mail { get; set; }
-        public string Telefono { get; set; }
+        public uint Telefono { get; set; }
         public string COD_Ciudad { get; set; }
     }
 }

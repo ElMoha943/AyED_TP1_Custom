@@ -13,12 +13,12 @@ namespace AyED_TP1
             uint attempts = 3;
             string clave, secret = "admin123";
             while (attempts > 0) {
-                attempts--; //DISMINUYE EL CONTADOR DE INTENTOS
                 Console.WriteLine("\nIngrese la clave, " + attempts + " intentos restantes.");
+                attempts--; //DISMINUYE EL CONTADOR DE INTENTOS
                 clave = Console.ReadLine(); //INGRESO DE DATOS
                 if (clave == secret) {
                     if (tipo == "cliente") return '1';
-                    if (tipo == "cliente") return '2';
+                    if (tipo == "empresa") return '2';
                 }
                 else Console.WriteLine("Clave incorrecta.");
             }

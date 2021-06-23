@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AyED_TP1.Objetos
+namespace AyED_TP1
 {
-    class Cliente
+    public class Cliente
     {
         public Cliente(string nombre, string mail)
         {

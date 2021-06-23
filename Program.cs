@@ -15,10 +15,11 @@ namespace AyED_TP1
             do
             {
                 //MENU PRINCIPAL
+                Console.Clear();
                 Console.WriteLine("MENU PRINCIPAL:\n\n1. Empresas\n2. Clientes\n0. Salir");
                 do
                 {
-                    option = Console.ReadKey().KeyChar; //INGRESO DE DATO DEL MENU CON ESTRUCTURA DE CONTROL
+                    option = Console.ReadKey().KeyChar;
                 } while (option != '1' && option != '2' && option != '0');
 
                 //LOGIN
@@ -35,14 +36,14 @@ namespace AyED_TP1
                 //MOSTRAR SUB MENUS
                 switch (menu)
                 {
-                    case '1': //CLIENTES
+                    case '1':
                         s.showCliente();
                         break;
-                    case '2': //EMPRESAS
+                    case '2':
                         s.showEmpresa();
                         break;
                 }
-            } while (option != 0);
+            } while (option != '0');
         }
     }
 }

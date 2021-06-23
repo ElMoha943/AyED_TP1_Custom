@@ -12,7 +12,6 @@ namespace AyED_TP1
         public void showEmpresa()
         {
             char opt;
-            
             do
             {
                 Console.Clear();
@@ -39,7 +38,7 @@ namespace AyED_TP1
                         a.altaProducto();
                         break;
                 }
-            } while (opt != 0); //CONDICION DE SALIDA
+            } while (opt != '0'); //CONDICION DE SALIDA
         }
 
         public void showCliente()
@@ -63,7 +62,7 @@ namespace AyED_TP1
                         a.getProyectos();
                         break;
                 }
-            } while (opt != 0); //CONDICION DE SALIDA
+            } while (opt != '0'); //CONDICION DE SALIDA
         }
     }
 }

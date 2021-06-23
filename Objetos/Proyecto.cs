@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AyED_TP1.Objetos
+namespace AyED_TP1
 {
-    class Proyecto
+    public class Proyecto
     {
         public Proyecto(string cOD_PRO, string cOD_EMP, char etapa, char tipo, string cOD_Ciudad)
         {
@@ -24,6 +24,5 @@ namespace AyED_TP1.Objetos
         public char Tipo { get; set; }
         public string COD_Ciudad { get; set; }
         public int Cantidad { get; set; }
-
     }
 }
